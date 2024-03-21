@@ -19,6 +19,9 @@ namespace Persistance
             services.AddTransient<IDataBase>(sp => new SIDataBase(connectionString));
             services.AddTransient<IPersonalSoporteRepository, PersonalSoporteRepository>();
             services.AddTransient<IAmbienteRepository, AmbienteRepository>();
+            services.AddTransient<IDocumentoRepository, DocumentoRepository>();
+            services.AddTransient<IDetalleDocumentoRepository, DetalleDocumentoRepository>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             return services;
         }
         
