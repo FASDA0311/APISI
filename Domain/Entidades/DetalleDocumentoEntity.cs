@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entidades
 {
-    public class DetalleDocumento
+    public class DetalleDocumentoEntity
     {
         public int Codigo { get; set; }
 

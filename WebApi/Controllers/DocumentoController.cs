@@ -1,4 +1,4 @@
-﻿using Application.Ambiente.Queries;
+﻿using Application.Documento.Queries.Listar;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,15 +6,15 @@ namespace SistemaInformatico.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AmbienteController : AbstractController
+    public class DocumentoController : AbstractController
     {
         [HttpGet]
         [Route("listar")]
-        public async Task<IActionResult> ListarAmbiente()
+        public async Task<IActionResult> ListarDocumento()
         {
             try
             {
-                var response = await Mediator.Send(new ListarAmbienteQuery());
+                var response = await Mediator.Send(new ListarDocumentoQuery());
                 return Ok(response);
             }
             catch (Exception ex)
