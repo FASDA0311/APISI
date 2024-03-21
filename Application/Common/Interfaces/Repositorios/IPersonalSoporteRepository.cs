@@ -10,5 +10,8 @@ namespace Application.Common.Interfaces.Repositorios
     public interface IPersonalSoporteRepository
     {
         Task<IEnumerable<PersonalSoporteEntity>> ListarPersonalSoporte();
+        Task<PersonalSoporteEntity> ObtenerPersonalSoporte(int id);
+        Task<int> CrearPersonalSoporte(PersonalSoporteEntity variable);
+        Task ActualizarPersonalSoporte(PersonalSoporteEntity variable);
     }
 }
