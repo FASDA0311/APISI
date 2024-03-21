@@ -19,9 +19,13 @@ namespace Persistance
             services.AddTransient<IDataBase>(sp => new SIDataBase(connectionString));
             services.AddTransient<IPersonalSoporteRepository, PersonalSoporteRepository>();
             services.AddTransient<IAmbienteRepository, AmbienteRepository>();
+<<<<<<< Updated upstream
             services.AddTransient<IDocumentoRepository, DocumentoRepository>();
             services.AddTransient<IDetalleDocumentoRepository, DetalleDocumentoRepository>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+=======
+            services.AddTransient<IEquipoRepository, EquipoRepository>();
+>>>>>>> Stashed changes
             return services;
         }
         
