@@ -38,7 +38,7 @@ namespace Persistance.Repositorios
                         var entity = new AmbienteEntity()
                         {
                             Codigo = reader.IsDBNull(reader.GetOrdinal("Codigo")) ? default : reader.GetInt32(reader.GetOrdinal("Codigo")),
-                            Nombre = reader.IsDBNull(reader.GetOrdinal("Nombres")) ? default : reader.GetString(reader.GetOrdinal("Nombres")),
+                            Nombre = reader.IsDBNull(reader.GetOrdinal("Nombre")) ? default : reader.GetString(reader.GetOrdinal("Nombre")),
                             Descripcion = reader.IsDBNull(reader.GetOrdinal("Descripcion")) ? default : reader.GetString(reader.GetOrdinal("Descripcion")),
                             Vigente = reader.IsDBNull(reader.GetOrdinal("Vigente")) ? default : reader.GetBoolean(reader.GetOrdinal("Vigente")),
                         };
