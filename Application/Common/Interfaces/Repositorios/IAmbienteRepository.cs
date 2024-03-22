@@ -10,5 +10,6 @@ namespace Application.Common.Interfaces.Repositorios
     public interface IAmbienteRepository
     {
         Task<IEnumerable<AmbienteEntity>> ListarAmbiente();
+        Task<int> CrearAmbiente(AmbienteEntity variable);
     }
 }

@@ -23,6 +23,35 @@ namespace Persistance.Repositorios
             _dataBase = services.First(s => s.GetType() == typeof(SIDataBase));
         }
 
+        public async Task<int> CrearAmbiente(AmbienteEntity variable)
+        {
+            using (var cnx = _dataBase.GetConnection())
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@nombre", variable.Nombre);
+                parameters.Add("@descripcion", variable.Descripcion);
+                parameters.Add("@codigo", null, dbType: DbType.Int32, direction: ParameterDirection.ReturnValue);
+
+                var result = await cnx.ExecuteAsync(
+                    "[dbo].[usp_InsertarAmbiente]",
+                    param: parameters,
+                    commandType: CommandType.StoredProcedure);
+                try
+                {
+                    var Id = parameters.Get<int>("@codigo");
+
+                    return Id;
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            }
+        }
+      
+
         public async Task<IEnumerable<AmbienteEntity>> ListarAmbiente()
         {
             using (var cnx = _dataBase.GetConnection())

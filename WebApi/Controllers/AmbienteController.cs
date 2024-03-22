@@ -1,4 +1,6 @@
-﻿using Application.Ambiente.Queries;
+﻿using Application.Ambiente.Commands.CrearAmbiente;
+using Application.Ambiente.Queries;
+using Application.PersonalSoporte.Commands.CrearPersonaSoporte;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +24,15 @@ namespace SistemaInformatico.API.Controllers
                 return BadRequest(ex.Message);
             }
 
+        }
+
+        [HttpPost]
+        [Route("agregar")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> CrearAmbiente([FromBody] CreateAmbienteCommand command)
+        {
+            var response = await Mediator.Send(command);
+            return Ok(response);
         }
     }
 }
