@@ -23,6 +23,7 @@ namespace Persistance
             services.AddTransient<IDetalleDocumentoRepository, DetalleDocumentoRepository>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IEquipoRepository, EquipoRepository>();
+            services.AddTransient<IResponsableRepository, ResponsableRepository>();
             return services;
         }
         
