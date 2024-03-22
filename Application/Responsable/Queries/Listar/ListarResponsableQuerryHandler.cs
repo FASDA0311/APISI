@@ -15,7 +15,7 @@ namespace Application.Responsable.Queries.Listar
         private readonly IResponsableRepository _repository;
         private readonly IMapper _mapper;
 
-        public ListarResponsableQueryHandler(IResponsableRepository repository, IMapper mapper)
+        public ListarResponsableQuerryHandler(IResponsableRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
