@@ -10,5 +10,9 @@ namespace Application.Common.Interfaces.Repositorios
     public interface IUsuarioRepository
     {
         Task<IEnumerable<UsuarioEntity>> ListarUsuario();
+        Task<UsuarioEntity> ObtenerUsuario(int id);
+        Task<int> CrearUsuario(UsuarioEntity variable);
+        Task ActualizarUsuario(UsuarioEntity variable);
     }
 }
+

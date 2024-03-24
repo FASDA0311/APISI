@@ -78,5 +78,50 @@ namespace Persistance.Repositorios
                 }
             }
         }
+        public async Task<AmbienteEntity> ObtenerAmbiente(int id)
+        {
+            using (var cnx = _dataBase.GetConnection())
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@codigo", id);
+
+                using (var reader = await cnx.ExecuteReaderAsync(
+                    "[dbo].[usp_Obtener_Ambiente]",
+                    param: parameters,
+                    commandType: CommandType.StoredProcedure))
+                {
+                    AmbienteEntity result = null;
+
+                    while (reader.Read())
+                    {
+                        result = new AmbienteEntity();
+                        result.Codigo = reader.IsDBNull(reader.GetOrdinal("Codigo")) ? default : reader.GetInt32(reader.GetOrdinal("Codigo"));
+                        result.Nombre = reader.IsDBNull(reader.GetOrdinal("Nombre")) ? default : reader.GetString(reader.GetOrdinal("Nombre"));
+                        result.Descripcion = reader.IsDBNull(reader.GetOrdinal("Descripcion")) ? default : reader.GetString(reader.GetOrdinal("Descripcion"));
+                        result.Vigente = reader.IsDBNull(reader.GetOrdinal("Vigente")) ? default : reader.GetBoolean(reader.GetOrdinal("Vigente"));
+                    }
+
+                    return result;
+                }
+            }
+        }
+        public async Task ActualizarAmbiente(AmbienteEntity variable)
+        {
+            using (var cnx = _dataBase.GetConnection())
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@codigo", variable.Codigo);
+                parameters.Add("@nombre", variable.Nombre);
+                parameters.Add("@descripcion", variable.Descripcion);
+                parameters.Add("@vigente", variable.Vigente);
+
+                var result = await cnx.ExecuteAsync(
+                   "[dbo].[usp_Actualizar_Ambiente]",
+                   param: parameters,
+                   commandType: CommandType.StoredProcedure);
+
+            }
+        }
     }
+
 }

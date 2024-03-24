@@ -24,6 +24,18 @@ namespace Persistance
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IEquipoRepository, EquipoRepository>();
             services.AddTransient<IResponsableRepository, ResponsableRepository>();
+            services.AddTransient<ITipoMaterialRepository, TipoMaterialRepository>();
+            services.AddTransient<IMaterialRepository, MaterialRepository>();
+            services.AddTransient<IOrdenReposicionRepository, OrdenReposicionRepository>();
+            services.AddTransient<IDetalleReposicionRepository, DetalleReposicionRepository>();
+            services.AddTransient<IEntradaRepository, EntradaRepository>();
+            services.AddTransient<IDesarrolloRepository, DesarrolloRepository>();
+            services.AddTransient<ISalidaRepository, SalidaRepository>();
+            services.AddTransient<IDetalleEntradaRepository, DetalleEntradaRepository>();
+            services.AddTransient<IActividadRepository, ActividadRepository>();
+            services.AddTransient<IDetalleMaterialRepository, DetalleMaterialRepository>();
+            services.AddTransient<IPersonalDesarrolloRepository, PersonalDesarrolloRepository>();
+            services.AddTransient<IActividadDetalleEntradaRepository, ActividadDetalleEntradaRepository>();
             return services;
         }
         

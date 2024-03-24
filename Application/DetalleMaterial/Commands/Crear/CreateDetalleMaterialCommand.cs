@@ -1,15 +1,16 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entidades
+namespace Application.DetalleMaterial.Commands.Crear
 {
-    public class Detalle_MaterialEntity
+    public class CreateDetalleMaterialCommand : IRequest<int>
     {
-        public int Codigo { get; set; }
         public int CodigoMaterial { get; set; }
         public int CodigoActividad { get; set; }
     }
 }
+

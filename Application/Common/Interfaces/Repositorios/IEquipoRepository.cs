@@ -10,5 +10,9 @@ namespace Application.Common.Interfaces.Repositorios
     public interface IEquipoRepository
     {
         Task<IEnumerable<EquipoEntity>> ListarEquipo();
+        Task<EquipoEntity> ObtenerEquipo(int id);
+        Task<int> CrearEquipo(EquipoEntity variable);
+        Task ActualizarEquipo(EquipoEntity variable);
     }
 }
+

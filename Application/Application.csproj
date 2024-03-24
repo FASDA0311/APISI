@@ -16,4 +16,16 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Material\" />
+    <Folder Include="DetalleReposicion\" />
+    <Folder Include="Entrada\" />
+    <Folder Include="DetalleEntrada\" />
+    <Folder Include="DetalleMaterial\" />
+    <Folder Include="PersonalDesarrollo\" />
+    <Folder Include="Salida\" />
+    <Folder Include="OrdenReposicion\" />
+    <Folder Include="TipoMaterial\" />
+  </ItemGroup>
+
 </Project>

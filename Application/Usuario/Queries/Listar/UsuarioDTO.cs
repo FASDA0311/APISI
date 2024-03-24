@@ -20,6 +20,8 @@ namespace Application.Usuario.Queries.Listar
 
         public bool Vigente { get; set; }
 
+        public int CodigoPersonalSoporte { get; set; }
+
 
         public void Mapping(Profile profile)
         {

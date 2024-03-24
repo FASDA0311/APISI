@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entidades
 {
-    internal class Orden_ReposicionEntity
+    public class OrdenReposicionEntity
     {
         public int Codigo { get; set; }
         public DateTime Fecha { get; set; }

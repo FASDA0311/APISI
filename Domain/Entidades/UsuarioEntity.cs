@@ -16,6 +16,8 @@ namespace Domain.Entidades
         public char TipoUsuario { get; set; }
 
         public bool Vigente { get; set; }
+
+        public int CodigoPersonalSoporte {  get; set; }
     }
     /*
      CREATE TABLE Usuario (

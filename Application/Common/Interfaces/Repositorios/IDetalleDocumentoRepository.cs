@@ -10,5 +10,9 @@ namespace Application.Common.Interfaces.Repositorios
     public interface IDetalleDocumentoRepository
     {
         Task<IEnumerable<DetalleDocumentoEntity>> ListarDetalleDocumento();
+        Task<DetalleDocumentoEntity> ObtenerDetalleDocumento(int id);
+        Task<int> CrearDetalleDocumento(DetalleDocumentoEntity variable);
+        Task ActualizarDetalleDocumento(DetalleDocumentoEntity variable);
     }
 }
+

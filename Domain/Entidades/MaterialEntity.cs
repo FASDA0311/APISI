@@ -12,7 +12,7 @@ namespace Domain.Entidades
 
         public string Nombre { get; set; }
         public int Cantidad { get; set; }
-        public int CodigoTipoProducto { get; set; }
+        public int TipoProductoCodigo { get; set; }
         public bool Vigente { get; set; }
     }
     
